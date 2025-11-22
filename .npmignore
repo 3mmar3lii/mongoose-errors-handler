@@ -1,0 +1,10 @@
+test-local.js
+TESTING.md
+node_modules/
+.DS_Store
+*.log
+.git
+.gitignore
+test-app/
+.vscode/
+*.tgz

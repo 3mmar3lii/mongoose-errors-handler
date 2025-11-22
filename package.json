@@ -1,0 +1,33 @@
+{
+  "name": "mongoose-errors-handler",  
+  "version": "1.0.0",
+  "description": "Lightweight library for handling Mongoose errors in Express.js with user-friendly messages and HTTP status codes",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./middleware": "./middleware.js"
+  },
+  "type": "module",
+  "keywords": [
+    "mongoose",
+    "error",
+    "handler",
+    "express",
+    "middleware",
+    "validation",
+    "mongodb"
+  ],
+  "author": "Ammar Alaa Ibrahim",
+"license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3mmar3lii/mongoose-errors-handler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/3mmar3lii/mongoose-errors-handler/issues"
+  },
+  "homepage": "https://github.com/3mmar3lii/mongoose-errors-handler#readme",
+  "peerDependencies": {
+    "mongoose": ">=6.0.0"
+  }
+}
