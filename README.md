@@ -14,7 +14,7 @@ A lightweight, production-ready library for handling Mongoose errors in Express.
 ## Installation
 
 ```bash
-npm install mongoose-error-handler
+npm install mongoose-errors-handler
 ```
 
 ## Quick Start
@@ -23,7 +23,7 @@ npm install mongoose-error-handler
 
 ```javascript
 import express from 'express';
-import { errorMiddleware } from 'mongoose-error-handler/middleware';
+import { errorMiddleware } from 'mongoose-errors-handler/middleware';
 
 const app = express();
 
@@ -36,7 +36,7 @@ app.use(errorMiddleware);
 ### Option 2: Use the Handler Directly
 
 ```javascript
-import MongooseErrorHandler from 'mongoose-error-handler';
+import MongooseErrorHandler from 'mongoose-errors-handler';
 
 app.post('/users', async (req, res) => {
   try {
@@ -55,7 +55,7 @@ app.post('/users', async (req, res) => {
 ### Option 3: Use the Async Handler
 
 ```javascript
-import { asyncHandler } from 'mongoose-error-handler/middleware';
+import { asyncHandler } from 'mongoose-errors-handler/middleware';
 
 app.post('/users', asyncHandler(async (req, res) => {
   const user = await User.create(req.body);
@@ -98,7 +98,7 @@ Express middleware for automatic error handling.
 
 **Example:**
 ```javascript
-import { errorMiddleware } from 'mongoose-error-handler/middleware';
+import { errorMiddleware } from 'mongoose-errors-handler/middleware';
 app.use(errorMiddleware);
 ```
 
@@ -114,7 +114,7 @@ Wrapper for async route handlers that automatically catches errors.
 
 **Example:**
 ```javascript
-import { asyncHandler } from 'mongoose-error-handler/middleware';
+import { asyncHandler } from 'mongoose-errors-handler/middleware';
 
 app.get('/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
