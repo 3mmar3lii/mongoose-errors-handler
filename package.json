@@ -3,9 +3,16 @@
   "version": "1.0.1",
   "description": "Lightweight library for handling Mongoose errors in Express.js with user-friendly messages and HTTP status codes",
   "main": "index.js",
+  "types": "index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./middleware": "./middleware.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./middleware": {
+      "types": "./middleware.d.ts",
+      "default": "./middleware.js"
+    }
   },
   "type": "module",
   "keywords": [

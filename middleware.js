@@ -19,13 +19,18 @@ export const errorMiddleware = (err, req, res, next) => {
   // If it returns an AppError instance (has statusCode)
   if (handledError.statusCode) {
     return res.status(handledError.statusCode).json({
+      isOperational: handledError.isOperational,
+      stack: handledError.stack,
       success: false,
+      status: handledError.status,
       error: handledError.message,
     });
   }
   
   // If it returns a plain object (unknown error)
   return res.status(500).json({
+    isOperational: handledError.isOperational,
+    stack: handledError.stack,
     success: false,
     error: handledError.message,
     type: handledError.type,
@@ -57,7 +62,10 @@ export const asyncHandler = (fn) => {
       if (handledError.statusCode) {
         return res.status(handledError.statusCode).json({
           success: false,
+          status: handledError.status,
           error: handledError.message,
+          isOperational: handledError.isOperational,
+          stack: handledError.stack,
         });
       }
       
@@ -65,6 +73,8 @@ export const asyncHandler = (fn) => {
         success: false,
         error: handledError.message,
         type: handledError.type,
+        isOperational: handledError.isOperational,
+        stack: handledError.stack,
       });
     }
   };
